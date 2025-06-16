@@ -7,6 +7,7 @@ function ProductList() {
           <th>Nome</th>
           <th>Valor</th>
           <th>Quantidade</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
