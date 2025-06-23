@@ -1,4 +1,4 @@
-function ProductList({ produtos, onEdit }) {
+function ProductList({ produtos, onEdit, onDelete }) {
   return (
     <table className="productList">
       <thead>
@@ -27,6 +27,14 @@ function ProductList({ produtos, onEdit }) {
               <td>
                 {onEdit && (
                   <button onClick={() => onEdit(produto)}>Editar</button>
+                )}
+                {onDelete && (
+                  <button
+                    onClick={() => onDelete(produto.id)}
+                    style={{ marginLeft: "8px" }}
+                  >
+                    Remover
+                  </button>
                 )}
               </td>
             </tr>
