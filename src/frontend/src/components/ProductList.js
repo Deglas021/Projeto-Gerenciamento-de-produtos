@@ -1,4 +1,4 @@
-function ProductList({ produtos, onDelete }) {
+function ProductList({ produtos, onEdit }) {
   return (
     <table className="productList">
       <thead>
@@ -25,7 +25,9 @@ function ProductList({ produtos, onDelete }) {
               <td>R$ {produto.preco.toFixed(2)}</td>
               <td>{produto.quantidade}</td>
               <td>
-                <button onClick={() => onDelete(produto.id)}>Excluir</button>
+                {onEdit && (
+                  <button onClick={() => onEdit(produto)}>Editar</button>
+                )}
               </td>
             </tr>
           ))
