@@ -1,4 +1,4 @@
-function ProductList() {
+function ProductList({ produtos, onDelete }) {
   return (
     <table className="productList">
       <thead>
@@ -11,6 +11,25 @@ function ProductList() {
         </tr>
       </thead>
       <tbody>
+        {produtos.length === 0 ? (
+          <tr>
+            <td colSpan="5" style={{ textAlign: "center" }}>
+              Nenhum produto encontrado.
+            </td>
+          </tr>
+        ) : (
+          produtos.map((produto, index) => (
+            <tr key={produto.id || index}>
+              <td>{produto.id || index + 1}</td>
+              <td>{produto.nome}</td>
+              <td>R$ {produto.preco.toFixed(2)}</td>
+              <td>{produto.quantidade}</td>
+              <td>
+                <button onClick={() => onDelete(produto.id)}>Excluir</button>
+              </td>
+            </tr>
+          ))
+        )}
       </tbody>
     </table>
   );
