@@ -19,7 +19,7 @@ function AdicionarProdutos() {
     };
 
     try {
-      const response = await axios.post("http://localhost:3000/produtos", produto);
+      const response = await axios.post("http://localhost:8080/products", produto);
       console.log("Produto adicionado:", response.data);
 
       setNome("");

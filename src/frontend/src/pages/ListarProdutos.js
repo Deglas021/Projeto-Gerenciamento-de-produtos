@@ -10,7 +10,7 @@ function ListarProdutos() {
   useEffect(() => {
     async function fetchProdutos() {
       try {
-        const response = await axios.get("http://localhost:3000/produtos");
+        const response = await axios.get("http://localhost:8080/products");
         setProdutos(response.data);
       } catch (error) {
         console.error("Erro ao buscar produtos:", error);
